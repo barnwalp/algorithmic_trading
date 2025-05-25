@@ -1,14 +1,12 @@
 # %%
 import matplotlib.pyplot as plt
 import pandas as pd
+import yfinance as yf
 
 pd.set_option("display.max_columns", None)  # show all columns
 pd.set_option("display.width", None)
 
-# import yfinance as yf
-
 plt.style.use("seaborn-v0_8")
-
 
 # %%
 df = yf.download(
@@ -26,7 +24,7 @@ df = yf.download(
 # df = yf.download(tickers = "HDFCBANK.NS", period="5d", interval="1m")
 # df = yf.download(tickers = "HDFCBANK.NS", period="max")
 df.index = pd.to_datetime(df.index.date)
-df
+print(df)
 
 # %%
 df2 = pd.read_csv("apple.csv")
